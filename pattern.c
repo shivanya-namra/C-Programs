@@ -206,3 +206,106 @@ int main()
         }
 
 
+pattern 11
+
+#include<stdio.h>
+
+int main()
+{
+        int i,j;
+        for(i=1; i <=5; i++)
+    {
+         for(j=1; j <=3; j++)
+    {
+        
+            printf("%d %d",j,i);
+            
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+pattern 12
+
+#include<stdio.h>
+
+int main()
+{
+
+    int n = 5;
+    int i,j;
+    int x;
+
+    for(i = 1; i <= n; i++)
+    {
+        x=i;
+        for(j = 1; j <= n; j++)
+        {
+            printf("%4d",x);
+            x += n;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+pattern 13
+
+#include<stdio.h>
+
+int main()
+{
+
+        int n = 5;
+        int i,j;
+        int x,y;
+    
+        for(i = 1; i <= n; i++)
+        {
+            x=i;
+           y = n - i + 1;
+            for(j = 1; j <= n; j++)
+            {
+                if(j % 2 == 1)
+                {
+                    printf("%2d",x);
+                }
+                else
+                {
+                    printf("%2d",y);
+                }
+                x = x + n;
+                y = y + n;
+            }
+            printf("\n");
+        }
+    return 0;
+}
+
+pattern 14
+
+#include<stdio.h>
+
+int main()
+{
+
+    int n = 5;
+    int i,j;
+    int x;
+
+    for(i = 1; i <= n; i++)
+    {
+        x = n - i + 1;
+        for(j = 1; j <= n; j++)
+        {
+            printf("%4d",x);
+            x = x + n;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
