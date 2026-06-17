@@ -334,3 +334,131 @@ public:
 };
 
 
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length())
+            return false;
+
+        int count[26] = {0};
+
+        for (char ch : s)
+            count[ch - 'a']++;
+
+        for (char ch : t)
+            count[ch - 'a']--;
+
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0)
+                return false;
+        }
+
+        return true;
+    }
+};
+
+
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        int count[26] = {0};
+
+        for(char ch : magazine)
+            count[ch - 'a']++;
+
+        for(char ch : ransomNote) {
+            if(count[ch - 'a'] == 0)
+                return false;
+            count[ch - 'a']--;
+        }
+
+        return true;
+    }
+};
+
+
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int n, int key, int index) {
+    
+    if (index == n)
+        return -1;
+
+    
+    if (arr[index] == key)
+        return index;
+
+   
+    return linearSearch(arr, n, key, index + 1);
+}
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int key = 30;
+
+    int result = linearSearch(arr, n, key, 0);
+
+    if (result != -1)
+        cout << "Element found at index " << result;
+    else
+        cout << "Element not found";
+
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int linearSearch(int arr[], int size, int target) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            return i;  
+        }
+    }
+    return -1;  
+}
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int target = 30;
+
+    int result = linearSearch(arr, size, target);
+
+    if (result != -1)
+        cout << "Element found at index " << result << endl;
+    else
+        cout << "Element not found" << endl;
+
+    return 0;
+}
+
+
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> st;
+
+        for (char ch : s) {
+            if (ch == '(' || ch == '{' || ch == '[') {
+                st.push(ch);
+            } else {
+                if (st.empty()) return false;
+
+                char top = st.top();
+                st.pop();
+
+                if ((ch == ')' && top != '(') ||
+                    (ch == '}' && top != '{') ||
+                    (ch == ']' && top != '[')) {
+                    return false;
+                }
+            }
+        }
+
+        return st.empty();
+    }
+};
