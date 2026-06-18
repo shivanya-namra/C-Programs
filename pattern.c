@@ -143,7 +143,6 @@ int main()
 pattern 8
 
 
-
 #include<stdio.h>
 
 int main()
@@ -307,6 +306,8 @@ int main()
     return 0;
 }
 
+code 15
+
 class Solution {
 public:
     bool isValid(string s) {
@@ -333,6 +334,7 @@ public:
     }
 };
 
+code 16
 
 class Solution {
 public:
@@ -357,6 +359,7 @@ public:
     }
 };
 
+code 17
 
 class Solution {
 public:
@@ -376,6 +379,7 @@ public:
     }
 };
 
+code 18
 
 #include <iostream>
 using namespace std;
@@ -408,6 +412,7 @@ int main() {
     return 0;
 }
 
+code 19
 
 #include <iostream>
 using namespace std;
@@ -436,6 +441,7 @@ int main() {
     return 0;
 }
 
+code 20
 
 class Solution {
 public:
@@ -462,3 +468,39 @@ public:
         return st.empty();
     }
 };
+
+code 21
+
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    int roll, age;
+    char name[50];
+
+    fp = fopen("student.txt", "w");
+
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    printf("Enter Roll Number: ");
+    scanf("%d", &roll);
+
+    printf("Enter Name: ");
+    scanf("%s", name);
+
+    printf("Enter Age: ");
+    scanf("%d", &age);
+
+    fprintf(fp, "Roll Number: %d\n", roll);
+    fprintf(fp, "Name: %s\n", name);
+    fprintf(fp, "Age: %d\n", age);
+
+    fclose(fp);
+
+    printf("Data saved successfully in student.txt\n");
+
+    return 0;
+}
