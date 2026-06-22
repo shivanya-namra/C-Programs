@@ -1,17 +1,13 @@
-class Solution {
-public:
-    bool canConstruct(string ransomNote, string magazine) {
-        int count[26] = {0};
+#include <iostream>
+using namespace std;
 
-        for(char ch : magazine)
-            count[ch - 'a']++;
+int main() {
+    char ch;
 
-        for(char ch : ransomNote) {
-            if(count[ch - 'a'] == 0)
-                return false;
-            count[ch - 'a']--;
-        }
+    cout << "Enter a character: ";
+    cin >> ch;
 
-        return true;
-    }
-};
+    cout << "ASCII Value of " << ch << " = " << int(ch);
+
+    return 0;
+}
