@@ -1,17 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main()
 {
-    int i, j;
+    int a, b, temp;
 
-    for(i = 5; i >= 1; i--)
-    {
-        for(j = 1; j <= 5; j++)
-        {
-            printf("%d",i);
-        }
-        printf("\n");
-    }
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
 
     return 0;
 }
