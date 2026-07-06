@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    unsigned long long factorial = 1; // use long long for large results
+
+    // Factorial logic
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+
+    cout << "Factorial of " << n << " = " << factorial << endl;
+
+    return 0;
+}
